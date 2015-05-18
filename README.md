@@ -95,6 +95,7 @@ __Command-line flags/options for `run` and `emulate`:__
     [--serverlogs|-s] .......  Print dev server logs to Ionic CLI (live reload req.)
     [--port|-p] .............  Dev server HTTP port (8100 default, live reload req.)
     [--livereload-port|-i] ..  Live Reload port (35729 default, live reload req.)
+    [--all|-a] ..............  Specify to run on all addresses, 0.0.0.0, so you can view externally
     [--browser|-w] ..........  Specifies the browser to use (safari, firefox, chrome)
     [--browseroption|-o] ....  Specifies a path to open to (/#/tab/dash)
     [--debug|--release]
@@ -231,7 +232,7 @@ the Grunt website.
 
 __Gulp Integration__
 
-When running `ionic serve`, you can have Ionic run any Gulp tasks you specify by putting them into your `ionic.project` as a `gulpStartupTasks` property, as follows:
+When running `ionic serve`, you can have Ionic run any Gulp tasks you specify by putting them into your `ionic.project` as a `gulpStartupTasks` property as follows:
 
 ```json
 {
@@ -244,6 +245,8 @@ When running `ionic serve`, you can have Ionic run any Gulp tasks you specify by
 ```
 
 Now, when you run `ionic serve`, it will run the `watch` task while starting the Ionic server.
+
+If you would like to disable gulp from running during serve, pass the `--nogulp` option.
 
 NOTE:
 
@@ -316,6 +319,8 @@ __Command-line flags/options:__
     [--noproxy|-x] ..........  Do not add proxies
     [--address] .............  Serves in the browser at the specified address
     [--lab] .................  Serves both iOS and Android in the browser
+    [--nogulp] ..............  Serve without running gulp tasks
+    [--platform] ............  Serve the platform specific styles in the browser (ios/android)
 
 ## Using Ionic Labs
 
